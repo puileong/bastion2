@@ -146,11 +146,11 @@ For ease of use, the code can also be extended to take in the parameters for the
 * https://aws.amazon.com/amazon-linux-2/
 * 2 package(s) needed for security, out of 10 available
 * Run "sudo yum update" to apply all updates.
-* [ec2-user@ip-172-31-19-222 ~]$ sudo yum update -y
+* [ec2-user@ip-172-31-19-222 ~]$ sudo yum update -y <<<<< command entered 
 * < skipped yum update log >
-* [ec2-user@ip-172-31-19-222 ~]$ sudo yum install mysql
+* [ec2-user@ip-172-31-19-222 ~]$ sudo yum install mysql <<<<< command entered
 * < skipped yum install mysql log >
-* [ec2-user@ip-172-31-19-222 ~]$ mysql -h rds-database.clmxqzg3ftk3.ap-southeast-1.rds.amazonaws.com -u admin -p rds_db
+* [ec2-user@ip-172-31-19-222 ~]$ mysql -h rds-database.clmxqzg3ftk3.ap-southeast-1.rds.amazonaws.com -u admin -p rds_db <<<<< command entered
 * Enter password: 
 * Welcome to the MariaDB monitor.  Commands end with ; or \g.
 * Your MySQL connection id is 9
