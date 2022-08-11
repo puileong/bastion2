@@ -138,4 +138,29 @@ For ease of use, the code can also be extended to take in the parameters for the
 * ec2-user:~/environment/cdk3/bastion2 (main) $  
 
 # 3) The following is the log to access the RDS from bastion host
+*   
+*       __|  __|_  )
+*       _|  (     /   Amazon Linux 2 AMI
+*      ___|\___|___|
+
+* https://aws.amazon.com/amazon-linux-2/
+* 2 package(s) needed for security, out of 10 available
+* Run "sudo yum update" to apply all updates.
+* [ec2-user@ip-172-31-19-222 ~]$ sudo yum update -y
+* < skipped yum update log >
+* [ec2-user@ip-172-31-19-222 ~]$ sudo yum install mysql
+* < skipped yum install mysql log >
+* [ec2-user@ip-172-31-19-222 ~]$ mysql -h rds-database.clmxqzg3ftk3.ap-southeast-1.rds.amazonaws.com -u admin -p rds_db
+* Enter password: 
+* Welcome to the MariaDB monitor.  Commands end with ; or \g.
+* Your MySQL connection id is 9
+* Server version: 8.0.28 Source distribution
+
+* Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+* Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+* MySQL [rds_db]>   
+  
+  
   
