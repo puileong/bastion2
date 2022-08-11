@@ -5,73 +5,68 @@ This is a project for AWS CDK V2 development with TypeScript for a bastion host 
 For ease of use, the code can also be extended to take in the parameters for the existing environment instead of hardcoding. The code can also be extended to use SSM Session Manager to connect to the bastion host instead of SSH using key pairs.
 
 ## The following is the log to set up the bastion host
-ec2-user:~/environment $ aws configure --profile bastion-cdk
-AWS Access Key ID [None]: ********************
-AWS Secret Access Key [None]: ***************************************
-Default region name [None]: ap-southeast-1
-Default output format [None]: 
-ec2-user:~/environment $ aws configure --profile bastion-cdk
-AWS Access Key ID [********************]: 
-AWS Secret Access Key [********************]: 
-Default region name [ap-southeast-1]: 
-Default output format [None]: 
-ec2-user:~/environment $ export AWS_PROFILE=bastion-cdk
-ec2-user:~/environment $ cdk --version
-2.34.2 (build 7abcbc6)
-ec2-user:~/environment $ npm install -g typescript
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+* ec2-user:-/environment $ aws configure --profile bastion-cdk
+* AWS Access Key ID [None]: ********************
+* AWS Secret Access Key [None]: ***************************************
+* Default region name [None]: ap-southeast-1
+* Default output format [None]: 
+* ec2-user:-/environment $ export AWS_PROFILE=bastion-cdk
+* ec2-user:-/environment $ cdk --version
+* 2.34.2 (build 7abcbc6)
+* ec2-user:-/environment $ npm install -g typescript
+* npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 
-changed 1 package, and audited 2 packages in 2s
+* changed 1 package, and audited 2 packages in 2s
 
-found 0 vulnerabilities
-npm notice 
-npm notice New minor version of npm available! 8.11.0 -> 8.17.0
-npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.17.0
-npm notice Run npm install -g npm@8.17.0 to update!
-npm notice 
-ec2-user:~/environment $ tsc --version
-Version 4.7.4
-ec2-user:~/environment $ npm install -g ts-node
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+* found 0 vulnerabilities
+* npm notice 
+* npm notice New minor version of npm available! 8.11.0 -> 8.17.0
+* npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.17.0
+* npm notice Run npm install -g npm@8.17.0 to update!
+* npm notice 
+* ec2-user:~/environment $ tsc --version
+* Version 4.7.4
+* ec2-user:~/environment $ npm install -g ts-node
+* npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 
-added 19 packages, and audited 20 packages in 4s
+* added 19 packages, and audited 20 packages in 4s
 
-found 0 vulnerabilities
-ec2-user:~/environment $ ts-node --version
-v10.9.1
-ec2-user:~/environment $ npm install  aws-cdk-lib
+* found 0 vulnerabilities
+* ec2-user:~/environment $ ts-node --version
+* v10.9.1
+* ec2-user:~/environment $ npm install  aws-cdk-lib
 
-added 2 packages, and audited 24 packages in 7s
+* added 2 packages, and audited 24 packages in 7s
 
-found 0 vulnerabilities
-ec2-user:~/environment $ mkdir cdk3
-ec2-user:~/environment $ cd cdk3/
-ec2-user:~/environment/cdk3 $ git clone https://github.com/puileong/bastion2.git
-Cloning into 'bastion2'...
-remote: Enumerating objects: 39, done.
-remote: Counting objects: 100% (39/39), done.
-remote: Compressing objects: 100% (31/31), done.
-remote: Total 39 (delta 11), reused 24 (delta 2), pack-reused 0
-Receiving objects: 100% (39/39), 85.69 KiB | 6.12 MiB/s, done.
-Resolving deltas: 100% (11/11), done.
-ec2-user:~/environment/cdk3 $ cdk bootstrap aws://071355518544/ap-southeast-1 
- ⏳  Bootstrapping environment aws://071355518544/ap-southeast-1...
-Trusted accounts for deployment: (none)
-Trusted accounts for lookup: (none)
-Using default execution policy of 'arn:aws:iam::aws:policy/AdministratorAccess'. Pass '--cloudformation-execution-policies' to customize.
- ✅  Environment aws://071355518544/ap-southeast-1 bootstrapped (no changes).
+* found 0 vulnerabilities
+* ec2-user:~/environment $ mkdir cdk3
+* ec2-user:~/environment $ cd cdk3/
+* ec2-user:~/environment/cdk3 $ git clone https://github.com/puileong/bastion2.git
+* Cloning into 'bastion2'...
+* remote: Enumerating objects: 39, done.
+* remote: Counting objects: 100% (39/39), done.
+* remote: Compressing objects: 100% (31/31), done.
+* remote: Total 39 (delta 11), reused 24 (delta 2), pack-reused 0
+* Receiving objects: 100% (39/39), 85.69 KiB | 6.12 MiB/s, done.
+* Resolving deltas: 100% (11/11), done.
+* ec2-user:~/environment/cdk3 $ cdk bootstrap aws://071355518544/ap-southeast-1 
+* ⏳  Bootstrapping environment aws://071355518544/ap-southeast-1...
+*Trusted accounts for deployment: (none)
+* Trusted accounts for lookup: (none)
+* Using default execution policy of 'arn:aws:iam::aws:policy/AdministratorAccess'. Pass '--cloudformation-execution-policies' to customize.
+* ✅  Environment aws://071355518544/ap-southeast-1 bootstrapped (no changes).
 ****************************************************
 *** Newer version of CDK is available [2.37.1]   ***
 *** Upgrade recommended (npm install -g aws-cdk) ***
 ****************************************************
 
-ec2-user:~/environment/cdk3 $ cd bastion2/
-ec2-user:~/environment/cdk3/bastion2 (main) $ ls
-bin               cdk.json        lib           package-lock.json  test
-cdk.context.json  jest.config.js  package.json  README.md          tsconfig.json
-ec2-user:~/environment/cdk3/bastion2 (main) $ cdk diff
-Stack OneStack
-IAM Statement Changes
+* ec2-user:~/environment/cdk3 $ cd bastion2/
+* ec2-user:~/environment/cdk3/bastion2 (main) $ ls
+* bin               cdk.json        lib           package-lock.json  test
+* cdk.context.json  jest.config.js  package.json  README.md          tsconfig.json
+* ec2-user:~/environment/cdk3/bastion2 (main) $ cdk diff
+* Stack OneStack
+* IAM Statement Changes
 ┌───┬──────────────────────────┬────────┬────────────────┬───────────────────────────┬───────────┐
 │   │ Resource                 │ Effect │ Action         │ Principal                 │ Condition │
 ├───┼──────────────────────────┼────────┼────────────────┼───────────────────────────┼───────────┤
