@@ -1,7 +1,7 @@
 # 1) Introduction to AWS CDK TypeScript project
 This is a project for AWS CDK V2 development with TypeScript for a bastion host to access an existing RDS instance in the protected subnet.
 * cdk.ts (typescript code) invoke the cdk-stack.ts and setup the environment (i.e. account and region)
-* cdk-stack.ts (typescript code) create the bastion ec2/host on the existing VPC and public subnet, using an existing security group & individual key pair to save on resources, so that multiple developers will not need to duplicate these resources. The code can be extended to create individual bastion host for the developers.
+* cdk-stack.ts (typescript code) create the bastion ec2/host on the existing VPC, public subnet, security group & individual key pair to save on resources, so that multiple developers will not need to create these duplicate resources. The code can be extended to create individual bastion host for the developers.
 For ease of use, the code can also be extended to take in the parameters for the existing environment instead of hardcoding. The code can also be extended to use SSM Session Manager to connect to the bastion host instead of SSH using key pairs.
 
 # 2) The following is the instructions and log to set up the bastion host (from AWS cloud9)
