@@ -49,8 +49,8 @@ For ease of use, the code can also be extended to take in the parameters for the
 * remote: Total 39 (delta 11), reused 24 (delta 2), pack-reused 0
 * Receiving objects: 100% (39/39), 85.69 KiB | 6.12 MiB/s, done.
 * Resolving deltas: 100% (11/11), done.
-* ec2-user:~/environment/cdk3 $ cdk bootstrap aws://071355518544/ap-southeast-1 
-* ⏳  Bootstrapping environment aws://071355518544/ap-southeast-1... <<<<< command entered
+* ec2-user:~/environment/cdk3 $ cdk bootstrap aws://071355518544/ap-southeast-1 <<<<< command entered
+* ⏳  Bootstrapping environment aws://071355518544/ap-southeast-1... 
 *Trusted accounts for deployment: (none)
 * Trusted accounts for lookup: (none)
 * Using default execution policy of 'arn:aws:iam::aws:policy/AdministratorAccess'. Pass '--cloudformation-execution-policies' to customize.
