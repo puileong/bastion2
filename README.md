@@ -5,15 +5,15 @@ This is a project for AWS CDK V2 development with TypeScript for a bastion host 
 For ease of use, the code can also be extended to take in the parameters for the existing environment instead of hardcoding. The code can also be extended to use SSM Session Manager to connect to the bastion host instead of SSH using key pairs.
 
 ## The following is the log to set up the bastion host
-* ec2-user:-/environment $ aws configure --profile bastion-cdk
+* ec2-user:~/environment $ aws configure --profile bastion-cdk
 * AWS Access Key ID [None]: ********************
 * AWS Secret Access Key [None]: ***************************************
 * Default region name [None]: ap-southeast-1
 * Default output format [None]: 
-* ec2-user:-/environment $ export AWS_PROFILE=bastion-cdk
-* ec2-user:-/environment $ cdk --version
+* ec2-user:~/environment $ export AWS_PROFILE=bastion-cdk
+* ec2-user:~/environment $ cdk --version
 * 2.34.2 (build 7abcbc6)
-* ec2-user:-/environment $ npm install -g typescript
+* ec2-user:~/environment $ npm install -g typescript
 * npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 
 * changed 1 package, and audited 2 packages in 2s
