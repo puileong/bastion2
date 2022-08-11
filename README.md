@@ -170,4 +170,7 @@ For ease of use, the code can also be extended to take in the parameters for the
 
 * ec2-user:~/environment/cdk3/bastion2 (main) $ 
   
-  
+# 5) The following are the resources existing in the current AWS environment
+
+*  security group ID=sg-095bf49ae1394b1fb name=rds-security-group
+*  security group ID=sg-094637113850ab747 name=bastionSecurityGroup
