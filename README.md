@@ -4,6 +4,7 @@ This is a project for CDK V2 development with TypeScript for a bastion host to a
 * cdk-stack.ts (typescript code) create the bastion ec2 host with on the existing VPC and public subnet, an existing security group & individual key pair to save on resources, so that multiple developers will not need to duplicate these resources. The code can be extended to create individual bastion host for the developers.
 
 ## The following is the log to set up the bastion host
-*1 set up the existing environment i.e. RDS, private subnet, RDS security group, VPC, public subnet, bastion security group, and key pairs
-* 
+*step 1 - set up the existing environment i.e. RDS, private subnet, RDS security group, VPC, public subnet, bastion security group, and key pairs
+*step 2 - the code can be extended to take in the parameters for the existing environment
+*step 3 - 
 
