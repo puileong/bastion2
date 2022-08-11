@@ -177,4 +177,4 @@ For ease of use, the code can also be extended to take in the parameters for the
 *  security group ID=sg-094637113850ab747 name=bastionSecurityGroup inbound-rule=allow-SSH-from-bastionSubnet 
 *  security group ID=sg-095bf49ae1394b1fb name=rds-security-group inbound-rule=allow-port-3306-from-bastionSubnet
 *  keypair name=lokeec2
-*  rds name=rds-database running MYSQL with db rds-database
+*  rds name=rds-database running MYSQL with db rds-db
