@@ -21,10 +21,10 @@ export class OneStack extends Stack {
 
 
         // 👇 create a Role for the EC2 Instance
-    const webserverRole = new iam.Role(this, 'webserver-role', {
+    const ec2ReadOnlyRole = new iam.Role(this, 'ec2-readonly-role', {
       assumedBy: new iam.ServicePrincipal('ec2.amazonaws.com'),
       managedPolicies: [
-        iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonS3ReadOnlyAccess'),
+        iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonEC2ReadOnlyAccess'),
       ],
     });
     
@@ -34,7 +34,7 @@ export class OneStack extends Stack {
       vpcSubnets: {
         availabilityZones: ['ap-southeast-1b'],
         },
-      role: webserverRole,
+      role: ec2ReadOnlyRole,
       securityGroup: bastionSecurityGroup,
       instanceType: ec2.InstanceType.of(
         ec2.InstanceClass.BURSTABLE2,
