@@ -1,14 +1,7 @@
 # Welcome to your CDK TypeScript project
+This is a project for CDK V2 development with TypeScript for a bastion host to access the existing RDS instance.
+* cdk.ts (typescript code) invoke the cdk-stack.ts and setup the environment (i.e. account and region)
+* cdk-stack.ts (typescript code) create the bastion ec2 host with on the existing VPC and public subnet, an existing security group & individual key pair to save on resources, so that multiple developers will not need to duplicate these resources. The code can be extended to create individual bastion host for the developers.
 
-This is a blank project for CDK development with TypeScript.
+## The following is the log to set up the bastion host
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-## Useful commands
-
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
