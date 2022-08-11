@@ -159,7 +159,15 @@ For ease of use, the code can also be extended to take in the parameters for the
 
 * Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-* MySQL [rds_db]>   
+* MySQL [rds_db]>   < connected to mysql >
   
+# 4) The following is the instructions and log to clean up the environment (from AWS Cloud9)
+* ec2-user:~/environment/cdk3/bastion2 (main) $ cdk destroy
+* Are you sure you want to delete: OneStack (y/n)? y
+* OneStack: destroying...
+
+* ✅  OneStack: destroyed
+
+* ec2-user:~/environment/cdk3/bastion2 (main) $ 
   
   
