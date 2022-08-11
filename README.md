@@ -5,15 +5,15 @@ This is a project for AWS CDK V2 development with TypeScript for a bastion host 
 For ease of use, the code can also be extended to take in the parameters for the existing environment instead of hardcoding. The code can also be extended to use SSM Session Manager to connect to the bastion host instead of SSH using key pairs.
 
 ## The following is the log to set up the bastion host
-* ec2-user:~/environment $ aws configure --profile bastion-cdk
-* AWS Access Key ID [None]: ********************
-* AWS Secret Access Key [None]: ***************************************
-* Default region name [None]: ap-southeast-1
+* ec2-user:~/environment $ aws configure --profile bastion-cdk                                    <<<<< command entered
+* AWS Access Key ID [None]: ********************                                                  <<<<< text entered
+* AWS Secret Access Key [None]: ***************************************                           <<<<< text entered
+* Default region name [None]: ap-southeast-1                                                      <<<<< text entered
 * Default output format [None]: 
-* ec2-user:~/environment $ export AWS_PROFILE=bastion-cdk
-* ec2-user:~/environment $ cdk --version
+* ec2-user:~/environment $ export AWS_PROFILE=bastion-cdk                                         <<<<< command entered
+* ec2-user:~/environment $ cdk --version                                                          <<<<< command entered 
 * 2.34.2 (build 7abcbc6)
-* ec2-user:~/environment $ npm install -g typescript
+* ec2-user:~/environment $ npm install -g typescript                                              <<<<< command entered
 * npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 
 * changed 1 package, and audited 2 packages in 2s
@@ -24,24 +24,24 @@ For ease of use, the code can also be extended to take in the parameters for the
 * npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.17.0
 * npm notice Run npm install -g npm@8.17.0 to update!
 * npm notice 
-* ec2-user:~/environment $ tsc --version
+* ec2-user:~/environment $ tsc --version <<<<< command entered
 * Version 4.7.4
-* ec2-user:~/environment $ npm install -g ts-node
+* ec2-user:~/environment $ npm install -g ts-node <<<<< command entered
 * npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 
 * added 19 packages, and audited 20 packages in 4s
 
 * found 0 vulnerabilities
-* ec2-user:~/environment $ ts-node --version
+* ec2-user:~/environment $ ts-node --version <<<<< command entered
 * v10.9.1
-* ec2-user:~/environment $ npm install  aws-cdk-lib
+* ec2-user:~/environment $ npm install  aws-cdk-lib <<<<< command entered
 
 * added 2 packages, and audited 24 packages in 7s
 
 * found 0 vulnerabilities
-* ec2-user:~/environment $ mkdir cdk3
-* ec2-user:~/environment $ cd cdk3/
-* ec2-user:~/environment/cdk3 $ git clone https://github.com/puileong/bastion2.git
+* ec2-user:~/environment $ mkdir cdk3 <<<<< command entered
+* ec2-user:~/environment $ cd cdk3/ <<<<< command entered
+* ec2-user:~/environment/cdk3 $ git clone https://github.com/puileong/bastion2.git <<<<< command entered
 * Cloning into 'bastion2'...
 * remote: Enumerating objects: 39, done.
 * remote: Counting objects: 100% (39/39), done.
@@ -50,7 +50,7 @@ For ease of use, the code can also be extended to take in the parameters for the
 * Receiving objects: 100% (39/39), 85.69 KiB | 6.12 MiB/s, done.
 * Resolving deltas: 100% (11/11), done.
 * ec2-user:~/environment/cdk3 $ cdk bootstrap aws://071355518544/ap-southeast-1 
-* ⏳  Bootstrapping environment aws://071355518544/ap-southeast-1...
+* ⏳  Bootstrapping environment aws://071355518544/ap-southeast-1... <<<<< command entered
 *Trusted accounts for deployment: (none)
 * Trusted accounts for lookup: (none)
 * Using default execution policy of 'arn:aws:iam::aws:policy/AdministratorAccess'. Pass '--cloudformation-execution-policies' to customize.
@@ -60,11 +60,11 @@ For ease of use, the code can also be extended to take in the parameters for the
 *** Upgrade recommended (npm install -g aws-cdk) ***
 ****************************************************
 
-* ec2-user:~/environment/cdk3 $ cd bastion2/
-* ec2-user:~/environment/cdk3/bastion2 (main) $ ls
+* ec2-user:~/environment/cdk3 $ cd bastion2/ <<<<< command entered
+* ec2-user:~/environment/cdk3/bastion2 (main) $ ls <<<<< command entered
 * bin               cdk.json        lib           package-lock.json  test
 * cdk.context.json  jest.config.js  package.json  README.md          tsconfig.json
-* ec2-user:~/environment/cdk3/bastion2 (main) $ cdk diff
+* ec2-user:~/environment/cdk3/bastion2 (main) $ cdk diff <<<<< command entered
 * Stack OneStack
 * IAM Statement Changes
 * ┌───┬──────────────────────────┬────────┬────────────────┬───────────────────────────┬───────────┐
@@ -96,7 +96,7 @@ For ease of use, the code can also be extended to take in the parameters for the
 * {"Ref":"BootstrapVersion"}]}]},"AssertDescription":"CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."}]}}
 
 
-* ec2-user:~/environment/cdk3/bastion2 (main) $ cdk deploy
+* ec2-user:~/environment/cdk3/bastion2 (main) $ cdk deploy <<<<< command entered
 
 
 * ✨  Synthesis time: 11.53s
@@ -119,7 +119,7 @@ For ease of use, the code can also be extended to take in the parameters for the
 * (NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
 
 * Do you wish to deploy these changes (y/n)? 
-* Do you wish to deploy these changes (y/n)? y
+* Do you wish to deploy these changes (y/n)? y <<<<< command entered
 * OneStack: deploying...
 * [0%] start: Publishing c31e6c05001594d43abedb8672767261c18b95386d869c23ca91f99be04b4c03:071355518544-ap-southeast-1
 * [100%] success: Published c31e6c05001594d43abedb8672767261c18b95386d869c23ca91f99be04b4c03:071355518544-ap-southeast-1
