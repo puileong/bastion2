@@ -67,70 +67,73 @@ For ease of use, the code can also be extended to take in the parameters for the
 * ec2-user:~/environment/cdk3/bastion2 (main) $ cdk diff
 * Stack OneStack
 * IAM Statement Changes
-┌───┬──────────────────────────┬────────┬────────────────┬───────────────────────────┬───────────┐
-│   │ Resource                 │ Effect │ Action         │ Principal                 │ Condition │
-├───┼──────────────────────────┼────────┼────────────────┼───────────────────────────┼───────────┤
-│ + │ ${ec2-readonly-role.Arn} │ Allow  │ sts:AssumeRole │ Service:ec2.amazonaws.com │           │
-└───┴──────────────────────────┴────────┴────────────────┴───────────────────────────┴───────────┘
-IAM Policy Changes
-┌───┬──────────────────────┬───────────────────────────────────────────────────────────────┐
-│   │ Resource             │ Managed Policy ARN                                            │
-├───┼──────────────────────┼───────────────────────────────────────────────────────────────┤
-│ + │ ${ec2-readonly-role} │ arn:${AWS::Partition}:iam::aws:policy/AmazonEC2ReadOnlyAccess │
-└───┴──────────────────────┴───────────────────────────────────────────────────────────────┘
-(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+* ┌───┬──────────────────────────┬────────┬────────────────┬───────────────────────────┬───────────┐
+* │   │ Resource                 │ Effect │ Action         │ Principal                 │ Condition │
+* ├───┼──────────────────────────┼────────┼────────────────┼───────────────────────────┼───────────┤
+* │ + │ ${ec2-readonly-role.Arn} │ Allow  │ sts:AssumeRole │ Service:ec2.amazonaws.com │           │
+* └───┴──────────────────────────┴────────┴────────────────┴───────────────────────────┴───────────┘
+* IAM Policy Changes
+* ┌───┬──────────────────────┬───────────────────────────────────────────────────────────────┐
+* │   │ Resource             │ Managed Policy ARN                                            │
+* ├───┼──────────────────────┼───────────────────────────────────────────────────────────────┤
+* │ + │ ${ec2-readonly-role} │ arn:${AWS::Partition}:iam::aws:policy/AmazonEC2ReadOnlyAccess │
+* └───┴──────────────────────┴───────────────────────────────────────────────────────────────┘
+* (NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
 
-Parameters
-[+] Parameter SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter: {"Type":"AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>","Default":"/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"}
-[+] Parameter BootstrapVersion BootstrapVersion: {"Type":"AWS::SSM::Parameter::Value<String>","Default":"/cdk-bootstrap/hnb659fds/version","Description":"Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"}
+* Parameters
+* [+] Parameter SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter 
+* SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter: 
+* {"Type":"AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>","Default":"/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"}
+* [+] Parameter BootstrapVersion BootstrapVersion: {"Type":"AWS::SSM::Parameter::Value<String>","Default":"/cdk-bootstrap/hnb659fds/version","Description":"Version of * the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"}
 
-Resources
-[+] AWS::IAM::Role ec2-readonly-role ec2readonlyroleF5A115C2 
-[+] AWS::IAM::InstanceProfile ec2-instance/InstanceProfile ec2instanceInstanceProfile9BCE9015 
-[+] AWS::EC2::Instance ec2-instance ec2instance42082E81 
+* Resources
+* [+] AWS::IAM::Role ec2-readonly-role ec2readonlyroleF5A115C2 
+* [+] AWS::IAM::InstanceProfile ec2-instance/InstanceProfile ec2instanceInstanceProfile9BCE9015 
+* [+] AWS::EC2::Instance ec2-instance ec2instance42082E81 
 
-Other Changes
-[+] Unknown Rules: {"CheckBootstrapVersion":{"Assertions":[{"Assert":{"Fn::Not":[{"Fn::Contains":[["1","2","3","4","5"],{"Ref":"BootstrapVersion"}]}]},"AssertDescription":"CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."}]}}
-
-
-ec2-user:~/environment/cdk3/bastion2 (main) $ cdk deploy
-
-
-✨  Synthesis time: 11.53s
-
-This deployment will make potentially sensitive changes according to your current security approval level (--require-approval broadening).
-Please confirm you intend to make the following modifications:
-
-IAM Statement Changes
-┌───┬──────────────────────────┬────────┬────────────────┬───────────────────────────┬───────────┐
-│   │ Resource                 │ Effect │ Action         │ Principal                 │ Condition │
-├───┼──────────────────────────┼────────┼────────────────┼───────────────────────────┼───────────┤
-│ + │ ${ec2-readonly-role.Arn} │ Allow  │ sts:AssumeRole │ Service:ec2.amazonaws.com │           │
-└───┴──────────────────────────┴────────┴────────────────┴───────────────────────────┴───────────┘
-IAM Policy Changes
-┌───┬──────────────────────┬───────────────────────────────────────────────────────────────┐
-│   │ Resource             │ Managed Policy ARN                                            │
-├───┼──────────────────────┼───────────────────────────────────────────────────────────────┤
-│ + │ ${ec2-readonly-role} │ arn:${AWS::Partition}:iam::aws:policy/AmazonEC2ReadOnlyAccess │
-└───┴──────────────────────┴───────────────────────────────────────────────────────────────┘
-(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
-
-Do you wish to deploy these changes (y/n)? 
-Do you wish to deploy these changes (y/n)? y
-OneStack: deploying...
-[0%] start: Publishing c31e6c05001594d43abedb8672767261c18b95386d869c23ca91f99be04b4c03:071355518544-ap-southeast-1
-[100%] success: Published c31e6c05001594d43abedb8672767261c18b95386d869c23ca91f99be04b4c03:071355518544-ap-southeast-1
-OneStack: creating CloudFormation changeset...
-
- ✅  OneStack
-
-✨  Deployment time: 203.72s
-
-Stack ARN:
-arn:aws:cloudformation:ap-southeast-1:071355518544:stack/OneStack/3cbd24f0-1920-11ed-b751-062e020cdc16
-
-✨  Total time: 215.25s
+* Other Changes
+* [+] Unknown Rules: {"CheckBootstrapVersion":{"Assertions":[{"Assert":{"Fn::Not":[{"Fn::Contains":[["1","2","3","4","5"],
+* {"Ref":"BootstrapVersion"}]}]},"AssertDescription":"CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."}]}}
 
 
-ec2-user:~/environment/cdk3/bastion2 (main) $  
+* ec2-user:~/environment/cdk3/bastion2 (main) $ cdk deploy
+
+
+* ✨  Synthesis time: 11.53s
+
+* This deployment will make potentially sensitive changes according to your current security approval level (--require-approval broadening).
+* Please confirm you intend to make the following modifications:
+
+* IAM Statement Changes
+* ┌───┬──────────────────────────┬────────┬────────────────┬───────────────────────────┬───────────┐
+* │   │ Resource                 │ Effect │ Action         │ Principal                 │ Condition │
+* ├───┼──────────────────────────┼────────┼────────────────┼───────────────────────────┼───────────┤
+* │ + │ ${ec2-readonly-role.Arn} │ Allow  │ sts:AssumeRole │ Service:ec2.amazonaws.com │           │
+* └───┴──────────────────────────┴────────┴────────────────┴───────────────────────────┴───────────┘
+* IAM Policy Changes
+* ┌───┬──────────────────────┬───────────────────────────────────────────────────────────────┐
+* │   │ Resource             │ Managed Policy ARN                                            │
+* ├───┼──────────────────────┼───────────────────────────────────────────────────────────────┤
+* │ + │ ${ec2-readonly-role} │ arn:${AWS::Partition}:iam::aws:policy/AmazonEC2ReadOnlyAccess │
+* └───┴──────────────────────┴───────────────────────────────────────────────────────────────┘
+* (NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+* Do you wish to deploy these changes (y/n)? 
+* Do you wish to deploy these changes (y/n)? y
+* OneStack: deploying...
+* [0%] start: Publishing c31e6c05001594d43abedb8672767261c18b95386d869c23ca91f99be04b4c03:071355518544-ap-southeast-1
+* [100%] success: Published c31e6c05001594d43abedb8672767261c18b95386d869c23ca91f99be04b4c03:071355518544-ap-southeast-1
+* OneStack: creating CloudFormation changeset...
+
+* ✅  OneStack
+
+* ✨  Deployment time: 203.72s
+
+* Stack ARN:
+* arn:aws:cloudformation:ap-southeast-1:071355518544:stack/OneStack/3cbd24f0-1920-11ed-b751-062e020cdc16
+
+* ✨  Total time: 215.25s
+
+
+* ec2-user:~/environment/cdk3/bastion2 (main) $  
 
