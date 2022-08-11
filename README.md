@@ -174,6 +174,6 @@ For ease of use, the code can also be extended to take in the parameters for the
 *  VPC ID=vpc-05e4ed787044995b5 name=DefaultVPC
 *  Subnet ID=subnet-0b9c55b1c69958258 name=bastionSubnet PUBLIC
 *  Subnet ID=subnet-0696f4e2af6ad5d92 name=rdsSubnet PRIVATE  
-*  security group ID=sg-094637113850ab747 name=bastionSecurityGroup
-*  security group ID=sg-095bf49ae1394b1fb name=rds-security-group
+*  security group ID=sg-094637113850ab747 name=bastionSecurityGroup inbound-rule=allow-SSH-from-bastionSubnet 
+*  security group ID=sg-095bf49ae1394b1fb name=rds-security-group inbound-rule=allow-port-3306-from-bastionSubnet
 *  keypair name=lokeec2
