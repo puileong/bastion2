@@ -176,5 +176,6 @@ For ease of use, the code can also be extended to take in the parameters for the
 *  Subnet ID=subnet-0696f4e2af6ad5d92 name=rdsSubnet PRIVATE  
 *  security group ID=sg-094637113850ab747 name=bastionSecurityGroup inbound-rule=allow-SSH-from-Internet outbound-rule=allow-port-3306-to-rdsSubnet 
 *  security group ID=sg-095bf49ae1394b1fb name=rds-security-group inbound-rule=allow-port-3306-from-bastionSubnet
+*  IAM role name=ec2ReadOnlyRole, for admin to administer appropriate role to bastion host
 *  keypair name=lokeec2
 *  rds name=rds-database running MYSQL with db rds-db
