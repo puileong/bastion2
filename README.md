@@ -137,3 +137,5 @@ For ease of use, the code can also be extended to take in the parameters for the
 
 * ec2-user:~/environment/cdk3/bastion2 (main) $  
 
+## The following is the log to access the RDS from bastion host
+  
